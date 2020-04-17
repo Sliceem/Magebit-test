@@ -19,7 +19,7 @@ class Route
 
 
     public function run(){
-        $pathToClass = './Controller/'.$this->class.'.php';
+        $pathToClass = './Controller/'.$this->class.'.Controller.php';
         if(file_exists($pathToClass)){
             require_once($pathToClass);
             $obj = new $this->class();
