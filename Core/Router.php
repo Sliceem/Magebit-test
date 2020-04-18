@@ -24,6 +24,10 @@ class Route
         if (file_exists($pathToClass)) {
             require_once($pathToClass);
             $obj = new $this->class;
+            if(method_exists($this->class, $this->method)){
+                $method = $this->method;
+                $obj->$method();
+            }
         } else {
             require_once './Controller/Index.Controller.php';
             new Index;

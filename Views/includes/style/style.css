@@ -1,0 +1,20 @@
+body {
+    /* background-image: url('../background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+    background: url('../background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
+
+.content-form {
+
+    max-width: auto;
+  margin: auto;
+  width: 100%;
+  
+}
