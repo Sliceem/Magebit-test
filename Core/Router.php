@@ -18,24 +18,30 @@ class Route
     }
 
 
-    public function run(){
-        $pathToClass = './Controller/'.$this->class.'.Controller.php';
-        if(file_exists($pathToClass)){
+    public function run()
+    {
+        $pathToClass = './Controller/' . $this->class . '.Controller.php';
+        if (file_exists($pathToClass)) {
             require_once($pathToClass);
-            $obj = new $this->class();
+            $obj = new $this->class;
+        } else {
+            require_once './Controller/Index.Controller.php';
+            new Index;
         }
     }
 
-    public function getClass(){
+    public function getClass()
+    {
         return $this->class;
     }
 
-    public function getMethod(){
+    public function getMethod()
+    {
         return $this->method;
     }
 
-    public function getArg(){
+    public function getArg()
+    {
         return $this->arg;
     }
-
 }
