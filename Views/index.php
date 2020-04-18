@@ -2,7 +2,7 @@
 
 <div class="content-form">
     <h2>INDEX - Sign up</h2>
-    <form action="" method="POST">
+    <form action="main/register" method="POST">
         <label>Name</label>
         <input type="text" name="username">
 
