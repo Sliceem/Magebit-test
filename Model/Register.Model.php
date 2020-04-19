@@ -1,5 +1,7 @@
 <?php
 
+require_once './Core/DB.php';
+
 class Register
 {
     private $username;
@@ -14,8 +16,11 @@ class Register
     }
 
     public function signup(){
-        $dataT = ['heloo', '22'];
-        return $dataT;
+        if ($this->validateEmail() && $this->validateUsername() && $this->validatePassword()){
+            // return $this->validateEmail() . ' - ' . $this->validateUsername() . ' - ' . $this->validatePassword();
+            $var = DB::instance()->chechUniqEmail();
+            return $var;
+        }else return $this->error;
     }
 
     private function validateEmail(){
@@ -24,5 +29,16 @@ class Register
         }else $this->error['email'] = 'Email not valid, try once more';
     }
 
+    private function validateUsername(){
+        if(strlen($this->username) > 4  && strlen($this->username) < 15){
+            return $this->username;
+        }else $this->error['username'] = 'Username must be more than 4 and less than 15 symbols';
+    }
+
+    private function validatePassword(){
+        if(strlen($this->password)> 6){
+            return password_hash($this->password, PASSWORD_DEFAULT);
+        }else $this->error['password'] = 'Password must be more than 6 symbols';
+    }
 
 }

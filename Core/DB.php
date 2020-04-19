@@ -5,7 +5,6 @@ require_once 'Config.php';
 class Db
 {
     private $pdo;
-    private $errors = [];
     private static $instance = null;
 
     private function __construct(){
@@ -13,7 +12,6 @@ class Db
         try{
             $this->pdo = new PDO($dsn, DBLOGIN, DBPASS);
             $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-            
         } catch (PDOException $err){
             throw new PDOException($err->getMessage());
         }
@@ -26,4 +24,11 @@ class Db
         return self::$instance;
     }
 
+    public function chechUniqEmail(){
+        $sql = "SELECT * FROM users";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        // $emailCount = $stmt->rowCount();
+        // return $emailCount;
+    }
 }

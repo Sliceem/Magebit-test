@@ -12,7 +12,7 @@ class Main
     {
         $this->data['username'] = trim($_POST['username']);
         $this->data['email'] = trim($_POST['email']);
-        $this->data['password'] = trim($_POST['email']);
+        $this->data['password'] = trim($_POST['password']);
         $this->data['submit'] = trim($_POST['submit']);
     }
 
