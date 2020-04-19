@@ -9,12 +9,15 @@ body {
   -o-background-size: cover;
   background-size: cover;
   position: relative;
+  background-color: green;
 }
 
-.content-form {
+form{
+  display: grid;
+  /* align-items: center; */
+  justify-content: center;
+  padding: 10px;
+  width: 300px;
+  background-color: hsla(120, 100%, 50%, 0.3);
 
-    max-width: auto;
-  margin: auto;
-  width: 100%;
-  
 }

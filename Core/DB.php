@@ -48,4 +48,12 @@ class DB
         }
         $stmt->execute();
     }
+
+    public function searchUser($email){
+        $sql = "SELECT * FROM users WHERE user_email = '$email'";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        $row = $stmt->fetch();
+        return $row;
+    }
 }
