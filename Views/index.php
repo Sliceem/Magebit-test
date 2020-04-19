@@ -16,6 +16,6 @@
 
     </form>
 </div>
-
+<?php var_dump($data); ?>
 
 <?php require_once 'includes/footer.php'; ?>
