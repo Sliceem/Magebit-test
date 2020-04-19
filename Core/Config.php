@@ -2,6 +2,7 @@
 
 
 define ('BR', '</br>');
+define ('URL', $_SERVER['HTTP_HOST']);
 
 
 define('DBNAME', 'magebit');

@@ -1,3 +1,5 @@
+<?php require_once './Core/Config.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
