@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+require_once './Core/DB.php';
 
 class Authentication
 {
@@ -20,5 +22,13 @@ class Authentication
         if (filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             return $this->email;
         } else $this->error['email'] = 'Email not valid, try once more';
+    }
+
+    public function AddingIfUniq($table, $email, $data)
+    {
+        $emailExists = DB::getInstance()->chechUniqEmail($table, $email);
+        if (!$emailExists) {
+            DB::getInstance()->addNewUser($this->table, $data);
+        }
     }
 }

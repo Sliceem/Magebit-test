@@ -3,6 +3,7 @@
 require_once './Core/DB.php';
 require_once './Model/Register.Model.php';
 require_once './Model/Login.Model.php';
+require_once './Model/UserData.Model.php';
 require_once './Core/View.php';
 
 class Main
@@ -31,6 +32,10 @@ class Main
     {
         $obj = new Login($this->data);
         $result = $obj->checkUserExists();
-        View::render('loggedUser', $result);
+        if ($result['loggedUser']) {
+            $obj = new UserData();
+            $data = $obj->showUserData($result['user_email']);
+            View::render('loggedUser', $data);
+        } else View::render('index', $result);
     }
 }

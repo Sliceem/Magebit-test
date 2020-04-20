@@ -1,11 +1,18 @@
 <?php require_once 'includes/header.php'; ?>
-
-<h1>HELLO </h1>
-<? 
-    if($data['loggedUser']){
-        include 'includes/isLogged.php';
-    }else include 'index.php';
-
-// var_dump($data['email_db']); ?>
-
-<?php require_once 'includes/footer.php';?>
+<div class="container">
+    <form action="/user/updateUser" method="POST" class="right">
+        <h1>HELLO <?php echo $data->user_name ?></h1>
+        <h3>Your Data: </h3>
+        <?php foreach ($data as $key => $value) {
+            if ($key == 'user_email') {
+                echo '<input type="hidden" name="' . $key . '" value="' . $value . '">';
+            } else {
+                echo '<p>' . $key . '</p>';
+                echo '<input type="text" name="' . $key . '" value="' . $value . '">';
+            }
+        }; ?>
+        <input type="submit" value="Update" class="submit">
+        <a class="logout" href="<?php echo BACKURL; ?>">LOGOUT</a>
+    </form>
+</div>
+<?php require_once 'includes/footer.php'; ?>

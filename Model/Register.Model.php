@@ -1,10 +1,10 @@
 <?php
 
-require_once './Core/DB.php';
 require_once 'Authentication.Model.php';
 
 class Register extends Authentication
 {
+    private $table = 'users';
 
     //Adding data from Form to DB
     public function signup()
@@ -16,7 +16,7 @@ class Register extends Authentication
                     'user_email'    => $this->validateEmail(),
                     'user_password' => $this->validatePassword()
                 ];
-                DB::getInstance()->addNewUser($data);
+                DB::getInstance()->addNewUser($this->table, $data);
             } else return $this->error;
         } else return $this->error;
     }
@@ -38,7 +38,7 @@ class Register extends Authentication
 
     public function checkEmailInDB()
     {
-        $result = DB::getInstance()->chechUniqEmail($this->validateEmail());
+        $result = DB::getInstance()->chechUniqEmail($this->table, $this->validateEmail());
         if ($result == 0) {
             return true;
         } else $this->error['user_exists'] = 'User With this Email Already Exists!';

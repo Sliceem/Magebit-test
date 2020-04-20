@@ -52,16 +52,26 @@ form:hover{
   background-color:rgb(240, 248, 255);
   color: #8795BA;
 }
-form:hover + .submit{
-  /* background-color:rgb(240, 248, 255); */
-  color: rgb(0, 0, 0);
-}
+
 .container{
   display: flex;
   justify-content: center;
-  margin-top: 20%;
+  margin-top: 15%;
 }
 .red{
   color: rgb(175, 23, 23);
   text-shadow: seashell;
+}
+
+.logout{
+  border-radius: 25px;
+  border: 2px solid;
+  border-color: #48ABFE;
+  font-size: 10px;
+  margin: 10px;
+  padding: 10px;
+  background: rgb(72, 172, 254);
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(240, 248, 255);
 }
