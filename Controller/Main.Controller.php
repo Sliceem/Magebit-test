@@ -23,7 +23,6 @@ class Main
     {
         $obj = new Register($this->data);
         $register_answer = $obj->signup();
-        // var_dump($register_answer);
         View::render('index', $register_answer);
     }
 
