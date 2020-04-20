@@ -14,6 +14,8 @@ class User
         $this->postData = $_POST;
         $this->email = $_POST['user_email'];
     }
+
+    //Update and Render new View template
     public function updateUser()
     {
         $obj = new UserData();

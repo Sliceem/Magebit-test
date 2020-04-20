@@ -62,6 +62,7 @@ class DB
         return $row;
     }
 
+    //Update user
     public function updateUserInfo($table, $columns, $values, $email)
     {
         $sql = "UPDATE $table SET $columns WHERE user_email = '$email'";

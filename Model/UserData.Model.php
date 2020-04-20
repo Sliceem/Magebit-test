@@ -9,17 +9,13 @@ class UserData
     public $values;
     public $email;
 
+    //Get user from current DB
     public function showUserData($email)
     {
         $user = DB::getInstance()->searchUser($this->table, $email);
         return $user;
     }
-
-    public function ret($array)
-    {
-        return $array;
-    }
-
+    //Update user Info, from form
     public function updateUserData($data)
     {
         $this->createColumns($data);
@@ -28,6 +24,7 @@ class UserData
         DB::getInstance()->updateUserInfo($this->table, $this->columns, $this->values, $this->email);
     }
 
+    //Generate column names
     public function createColumns($data)
     {
         $columns = array_keys($data);
@@ -43,6 +40,3 @@ class UserData
         $this->email = $data['user_email'];
     }
 }
-
-
-// filter_var(trim($column), FILTER_SANITIZE_STRING).'=?,'; 
