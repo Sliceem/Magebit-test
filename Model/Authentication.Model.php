@@ -14,6 +14,7 @@ class Authentication
         $this->password = filter_var($data['password'], FILTER_SANITIZE_STRING);
     }
 
+    //Validating Email
     protected function validateEmail()
     {
         if (filter_var($this->email, FILTER_VALIDATE_EMAIL)) {

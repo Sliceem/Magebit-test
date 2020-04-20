@@ -4,8 +4,8 @@
 <? 
     if($data['loggedUser']){
         include 'includes/isLogged.php';
-    }else include 'includes/notLogged.php';
+    }else include 'index.php';
 
-var_dump($data['loggedUser']); ?>
+// var_dump($data['email_db']); ?>
 
 <?php require_once 'includes/footer.php';?>

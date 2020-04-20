@@ -19,6 +19,7 @@ class DB
         }
     }
 
+    //Checking if connection exists
     public static function getInstance()
     {
         if (!isset(self::$instance)) {
@@ -27,6 +28,7 @@ class DB
         return self::$instance;
     }
 
+    //Chechking Current email in DB
     public function chechUniqEmail($email)
     {
         $sql = "SELECT * FROM users WHERE user_email = '$email'";
@@ -36,6 +38,7 @@ class DB
         return $emailCount;
     }
 
+    //Inserting new user to DB
     public function addNewUser($data)
     {
         $columns = rtrim(implode(',', array_keys($data)), ',');
@@ -49,6 +52,7 @@ class DB
         $stmt->execute();
     }
 
+    //Searching user By EMAIL
     public function searchUser($email){
         $sql = "SELECT * FROM users WHERE user_email = '$email'";
         $stmt = $this->pdo->prepare($sql);

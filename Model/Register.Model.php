@@ -6,6 +6,7 @@ require_once 'Authentication.Model.php';
 class Register extends Authentication
 {
 
+    //Adding data from Form to DB
     public function signup()
     {
         if ($this->validateEmail() && $this->validateUsername() && $this->validatePassword()) {

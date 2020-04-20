@@ -9,6 +9,7 @@ class Login extends Authentication
     protected $user;
     protected $loggedUser = false;
 
+    //Checking if email and password Exists
     public function checkUserExists(){
         if(password_verify($this->password, $this->searchUser()->user_password)){
             if($this->validateEmail() == $this->email){
@@ -22,6 +23,7 @@ class Login extends Authentication
         } else return $this->error;
     }
 
+    //Compairing user Current and in DB
     public function searchUser(){
         $getUser = DB::getInstance()->searchUser($this->validateEmail());
         if ($getUser != null){

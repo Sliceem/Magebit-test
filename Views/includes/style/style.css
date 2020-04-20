@@ -14,10 +14,54 @@ body {
 
 form{
   display: grid;
-  /* align-items: center; */
   justify-content: center;
   padding: 10px;
-  width: 300px;
-  background-color: hsla(120, 100%, 50%, 0.3);
+  width: 400px;
+  background-color:#021333c5;
+  font-family: 'Open Sans', sans-serif;
+  color: rgba(240, 248, 255, 0.753);
+  font-size: 12px;
+}
 
+input[type=submit]{
+  border-radius: 25px;
+  border: 2px solid;
+  border-color: #48ABFE;
+  font-size: 10px;
+  margin: 10px;
+  padding: 10px;
+  background: rgba(72, 172, 254, 0);
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(240, 248, 255);
+}
+input[type=submit]:hover{
+  border: 2px solid;
+  border-color: #F89A36;
+  background: #F89A36;
+}
+input[type=text]{
+  /* margin: 5px; */
+  /* padding: 5px; */
+  border: none;
+  border-bottom: 1px solid;
+  border-color: #8795BA;
+}
+
+form:hover{
+  background-color:rgb(240, 248, 255);
+  color: #8795BA;
+}
+form:hover + .submit{
+  /* background-color:rgb(240, 248, 255); */
+  color: rgb(0, 0, 0);
+}
+.container{
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+}
+.red{
+  color: rgb(175, 23, 23);
+  text-shadow: seashell;
 }

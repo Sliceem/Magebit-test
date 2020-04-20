@@ -1,6 +1,6 @@
 <?php
 
-
+//Usefull hints
 define ('BR', '</br>');
 define ('URL', $_SERVER['HTTP_HOST']);
 

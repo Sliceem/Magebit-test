@@ -17,6 +17,7 @@ class Main
         $this->data['submit'] = trim($_POST['submit']);
     }
 
+    //Registering new User
     public function register()
     {
         $obj = new Register($this->data);
@@ -25,10 +26,11 @@ class Main
         View::render('index', $register_answer);
     }
 
-    public function userLogin(){
+    //Logging user
+    public function userLogin()
+    {
         $obj = new Login($this->data);
         $result = $obj->checkUserExists();
         View::render('loggedUser', $result);
     }
-    
 }
