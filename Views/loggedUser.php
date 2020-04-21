@@ -12,7 +12,7 @@
             }
         }; ?>
         <input type="submit" value="Update" class="submit">
-        <a class="logout" href="<?php echo BACKURL; ?>">LOGOUT</a>
+        <a class="logout" href="<?php echo BACKURL; ?>">Go BACK</a>
     </form>
 </div>
 <?php require_once 'includes/footer.php'; ?>
