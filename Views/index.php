@@ -9,7 +9,8 @@
         </br>
         <label>Email</label>
         <input type="text" name="email">
-        <p class='red'><?php echo $data['user_exists'] ?></p>
+        <?php $var = isset($data['user_exists']) ? $data['user_exists']:$data['email']; ?>
+        <p class='red'><?php echo $var  ?></p>
         </br>
         <label>Password</label>
         <input type="text" name="password">
@@ -30,4 +31,6 @@
         <input type="submit" value="Login" name="submit" class="submit">
     </form>
 </div>
+
+
 <?php require_once 'includes/footer.php'; ?>
