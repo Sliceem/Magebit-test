@@ -9,7 +9,10 @@ class Register extends Authentication
     //Adding data from Form to DB
     public function signup()
     {
-        if ($this->validateEmail() && $this->validateUsername() && $this->validatePassword()) {
+        $this->validateEmail();
+        $this->validateUsername();
+        $this->validatePassword();
+        if (empty($this->error)){
             if ($this->checkEmailInDB()) {
                 $data = [
                     'user_name'     => $this->validateUsername(),
@@ -18,7 +21,8 @@ class Register extends Authentication
                 ];
                 DB::getInstance()->addNewUser($this->table, $data);
             } else return $this->error;
-        } else return $this->error;
+        }else
+        return $this->error;
     }
 
     private function validateUsername()
@@ -32,7 +36,6 @@ class Register extends Authentication
     {
         if (strlen($this->password) > 6) {
             return password_hash($this->password, PASSWORD_DEFAULT);
-            // return $this->password;
         } else $this->error['password'] = 'Password must be more than 6 symbols';
     }
 
