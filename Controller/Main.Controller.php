@@ -23,7 +23,10 @@ class Main
     {
         $obj = new Register($this->data);
         $register_answer = $obj->signup();
-        View::render('index', $register_answer);
+        if (!empty($register_answer)){
+            View::render('index', $register_answer);
+        }else 
+        header('Location: ' . BACKURL . '?succes=registered');
     }
 
     //Logging user

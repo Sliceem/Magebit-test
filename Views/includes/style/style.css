@@ -54,6 +54,9 @@ form:hover{
   color: rgb(175, 23, 23);
   text-shadow: seashell;
 }
+.green{
+  color: rgb(8, 255, 41);
+}
 
 .logout{
   border-radius: 25px;

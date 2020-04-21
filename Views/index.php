@@ -17,6 +17,10 @@
         <p class='red'><?php echo $data['password'] ?></p>
         </br>
         <input type="submit" value="Sign up" name="submit" class="submit">
+        <?php if (!empty($_GET['succes'])){
+            echo '<p class="green">User Registered Succesfully</p>';
+        }
+        ?>
     </form>
 
     <form action="/main/userLogin" method="POST" class="left">
